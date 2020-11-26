@@ -5,6 +5,7 @@
   "scripts": {
     "build": "run-s tailwind:build react-scripts:build",
     "eject": "react-scripts eject",
+    "postinstall": "patch-package",
     "react-scripts:build": "react-scripts build",
     "react-scripts:dev": "react-scripts start",
     "start": "run-p tailwind:dev react-scripts:dev",
@@ -31,16 +32,20 @@
     ]
   },
   "dependencies": {
+    "@tailwindcss/typography": "^0.3.1",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "autoprefixer": "^10.0.2",
     "cssnano": "^4.1.10",
     "npm-run-all": "^4.1.5",
+    "patch-package": "^6.2.2",
     "postcss": "^8.1.10",
     "postcss-cli": "^8.3.0",
+    "postinstall-postinstall": "^2.1.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-perfect-dark-mode": "^0.0.19",
     "react-scripts": "4.0.1",
     "tailwindcss": "^2.0.1",
     "web-vitals": "^0.2.4"
