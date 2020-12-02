@@ -1,4 +1,4 @@
-const getColor = (name) => ({ opacityVariable, opacityValue }) => {
+const color = (name) => ({ opacityVariable, opacityValue }) => {
   if (opacityValue !== undefined) {
     return `rgba(var(--twc-${name}), ${opacityValue})`
   }
@@ -8,11 +8,11 @@ const getColor = (name) => ({ opacityVariable, opacityValue }) => {
   return `rgb(var(--twc-${name}))`
 }
 
-const getColorScale = (name) =>
+const colorScale = (name) =>
   [50, 100, 200, 300, 400, 500, 600, 700, 800, 900].reduce(
     (acc, step) => ({
       ...acc,
-      [step]: getColor(`${name}-${step}`),
+      [step]: color(`${name}-${step}`),
     }),
     {},
   )
@@ -23,10 +23,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        foreground: getColor('foreground'),
-        background: getColor('background'),
-        accent: getColor('accent'),
-        gray: getColorScale('gray'),
+        foreground: color('foreground'),
+        background: color('background'),
+        accent: color('accent'),
+        gray: colorScale('gray'),
       },
     },
   },

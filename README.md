@@ -27,13 +27,13 @@ Color variables are defined in the main CSS file:
 Then referenced in `tailwind.config.js`:
 
 ```js
-const getColor = (name) => `rgb(var(--twc-${name}))`
+const color = (name) => `rgb(var(--twc-${name}))`
 
-const getColors = (name) =>
+const colorScale = (name) =>
   [50, 100, 200, 300, 400, 500, 600, 700, 800, 900].reduce(
     (acc, step) => ({
       ...acc,
-      [step]: getColor(`${name}-${step}`),
+      [step]: color(`${name}-${step}`),
     }),
     {},
   )
@@ -44,10 +44,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        foreground: getColor('foreground'),
-        background: getColor('background'),
-        accent: getColor('accent'),
-        gray: getColors('gray'),
+        foreground: color('foreground'),
+        background: color('background'),
+        accent: color('accent'),
+        gray: colorScale('gray'),
       },
     },
   },
